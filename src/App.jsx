@@ -1,3 +1,4 @@
+import React from "react";
 import Chatbot from './Chatbot';
 import './index.css';
 import './Chatbot.css';

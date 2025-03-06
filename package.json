@@ -1,22 +1,22 @@
 {
   "name": "ai-chat-box",
-  "private": false,
+  "private": true,
   "version": "1.0.0",
-  "main": "src/Chatbot.jsx",
+  "main": "dist/App.js",
+  "module": "dist/App.js",
+  "types": "dist/App.js",
   "exports": {
-    "import": "./src/Chatbot.jsx"
+    "import": "./dist/App.js",
+    "require": "./dist/App.js"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "babel src --out-dir dist --extensions .jsx && cp src/*.css dist/",
     "lint": "eslint .",
     "preview": "vite preview",
-    "pack": "npm pack"
+    "pack": "npm run build && npm pack"
   },
   "dependencies": {
-    "@babel/cli": "^7.26.4",
-    "@babel/core": "^7.26.9",
-    "@babel/preset-react": "^7.26.3",
     "@heroicons/react": "^2.2.0",
     "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
@@ -33,6 +33,10 @@
     "tailwindcss": "^3.4.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
